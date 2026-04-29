@@ -1,4 +1,4 @@
-package org.diego.ecommerce.product.util;
+package org.diego.ecommerce.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

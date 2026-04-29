@@ -4,12 +4,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class ConsultingRecordsTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private static EntityManagerFactory emf;
-    private static EntityManager em;
+public class EntityManagerTest {
+
+    protected static EntityManagerFactory emf;
+    protected static EntityManager em;
 
     // Métodos padrões para iniciar corretamente o Entity Manager Factory e Entity Manager
     @BeforeAll
@@ -31,24 +32,5 @@ public class ConsultingRecordsTest {
     @AfterEach
     public void tearDown() {
         em.close();
-    }
-
-    // Testes
-    @Test
-    public void testFindById() {
-        Product product = em.find(Product.class, 1);
-        // Product product = em.getReference(Product.class, 1);
-        assertEquals("Kindle", product.getName());
-    }
-
-    @Test
-    public void updateReference() {
-        Product product = em.getReference(Product.class, 1);
-        product.setName("Notebook Samsung");
-
-        em.refresh(product);
-
-        assertEquals("Kindle", product.getName());
-        // assertEquals("Notebook Samsung", product.getName());
     }
 }

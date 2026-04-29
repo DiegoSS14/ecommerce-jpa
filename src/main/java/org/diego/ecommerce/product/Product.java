@@ -5,11 +5,13 @@ import jakarta.persistence.Id;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
+@ToString
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -17,7 +19,7 @@ public class Product {
 
     @Id
     @EqualsAndHashCode.Include
-    String id;
+    Integer id;
     String name;
     String description;
     BigDecimal price;

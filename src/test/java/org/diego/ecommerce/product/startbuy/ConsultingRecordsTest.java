@@ -1,39 +1,12 @@
-package org.diego.ecommerce.product;
+package org.diego.ecommerce.product.startbuy;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.diego.ecommerce.product.EntityManagerTest;
+import org.diego.ecommerce.product.Product;
+import org.junit.jupiter.api.Test;
 
-public class ConsultingRecordsTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private static EntityManagerFactory emf;
-    private static EntityManager em;
-
-    // Métodos padrões para iniciar corretamente o Entity Manager Factory e Entity Manager
-    @BeforeAll
-    public static void setUpBeforeClass() {
-        emf = Persistence
-                .createEntityManagerFactory("Ecommerce-PU");
-    }
-
-    @AfterAll
-    public static void tearDownAfterClass() {
-        emf.close();
-    }
-
-    @BeforeEach
-    public void setUp() {
-        em = emf.createEntityManager();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        em.close();
-    }
-
-    // Testes
+public class ConsultingRecordsTest extends EntityManagerTest {
     @Test
     public void testFindById() {
         Product product = em.find(Product.class, 1);

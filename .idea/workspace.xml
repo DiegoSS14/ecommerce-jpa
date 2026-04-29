@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/util/StartPersistenceUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/util/StartPersistenceUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/EntityManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/EntityManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/ConsultingRecordsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/ConsultingRecordsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="11" />
+    <option name="cachedIndexableFilesCount" value="15" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,10 +47,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.StartPersistenceUnit.executor": "Run",
+    "JUnit.ConsultingRecordsTest.executor": "Run",
+    "JUnit.ConsultingRecordsTest.testFindById.executor": "Run",
+    "JUnit.ConsultingRecordsTest.updateReference.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.insertFirstProduct.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.insertWithMerge.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.openAndCloseTransaction.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.removeObject.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.updateObject.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -62,23 +77,98 @@
     "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.Main" />
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.diego.ecommerce.product" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.OperationsWithTransactionsTest.insertWithMerge">
+    <configuration name="OperationsWithTransactionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.*" />
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationsWithTransactionsTest.insertFirstProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="METHOD_NAME" value="insertFirstProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationsWithTransactionsTest.insertWithMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="METHOD_NAME" value="insertWithMerge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationsWithTransactionsTest.removeObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="METHOD_NAME" value="removeObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationsWithTransactionsTest.updateObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="METHOD_NAME" value="updateObject" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest.insertWithMerge" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest.updateObject" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest.removeObject" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest.insertFirstProduct" />
       </list>
     </recent_temporary>
   </component>
