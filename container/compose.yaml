@@ -1,0 +1,15 @@
+name: jpa
+services:
+  mysql:
+    container_name: mysql
+    image: ${MYSQL_VERSION}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-jpa:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+volumes:
+  mysql-jpa:
