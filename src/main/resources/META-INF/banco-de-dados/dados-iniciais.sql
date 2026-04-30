@@ -1,2 +1,5 @@
 insert into Product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
 insert into Product (id, name, price, description) values (3, 'Notebook', 5689.0, 'Conheça o novo notebook gamer com RTX 5090 e 64gb de ram DDR5.');
+
+insert into Client (id, name) values (1, 'Anderson Silva');
+insert into Client (id, name) values (2, 'Maurício Oliveira');

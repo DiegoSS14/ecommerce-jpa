@@ -11,6 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class OperationsWithTransactionsTest extends EntityManagerTest {
 
     @Test
+    public void preventOperationInDataBase() {
+        Product product = em.find(Product.class, 1);
+        em.detach(product); // Impede que os dados abaixo sejam persistidos no banco
+
+        em.getTransaction().begin();
+        product.setName("Livro Domain Driven Design");
+        product.setDescription("O melhor livro para você dar um upgrade na sua carreira");
+        em.getTransaction().commit();
+
+        em.clear();
+
+        Product productFinded = em.find(Product.class, 1);
+        assertEquals(productFinded.getName(), "Kindle");
+    }
+
+    @Test
     public void insertWithMerge() {
         Product product = new Product();
 

@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/cliente/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/FirstCrudTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/util/StartPersistenceUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/util/StartPersistenceUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/EntityManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/EntityManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/ConsultingRecordsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/ConsultingRecordsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="15" />
+    <option name="cachedIndexableFilesCount" value="18" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,6 +49,12 @@
     "JUnit.ConsultingRecordsTest.executor": "Run",
     "JUnit.ConsultingRecordsTest.testFindById.executor": "Run",
     "JUnit.ConsultingRecordsTest.updateReference.executor": "Run",
+    "JUnit.FirstCrudTest.create.executor": "Run",
+    "JUnit.FirstCrudTest.delete.executor": "Run",
+    "JUnit.FirstCrudTest.executor": "Run",
+    "JUnit.FirstCrudTest.findAll.executor": "Run",
+    "JUnit.FirstCrudTest.findById.executor": "Run",
+    "JUnit.FirstCrudTest.update.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.insertFirstProduct.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.insertWithMerge.executor": "Run",
@@ -67,6 +71,7 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -82,8 +87,8 @@
       <recent name="org.diego.ecommerce.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OperationsWithTransactionsTest.insertWithMerge">
-    <configuration name="OperationsWithTransactionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase">
+    <configuration name="FirstCrudTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -92,29 +97,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OperationsWithTransactionsTest.insertFirstProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="METHOD_NAME" value="insertFirstProduct" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
+      <option name="METHOD_NAME" value="create" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationsWithTransactionsTest.insertWithMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstCrudTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -123,14 +113,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="METHOD_NAME" value="insertWithMerge" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
+      <option name="METHOD_NAME" value="delete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationsWithTransactionsTest.removeObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstCrudTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -139,14 +129,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="METHOD_NAME" value="removeObject" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
+      <option name="METHOD_NAME" value="findAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationsWithTransactionsTest.updateObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstCrudTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationsWithTransactionsTest.preventOperationInDataBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +162,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
       <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="METHOD_NAME" value="updateObject" />
+      <option name="METHOD_NAME" value="preventOperationInDataBase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OperationsWithTransactionsTest.insertWithMerge" />
-        <item itemvalue="JUnit.OperationsWithTransactionsTest" />
-        <item itemvalue="JUnit.OperationsWithTransactionsTest.updateObject" />
-        <item itemvalue="JUnit.OperationsWithTransactionsTest.removeObject" />
-        <item itemvalue="JUnit.OperationsWithTransactionsTest.insertFirstProduct" />
+        <item itemvalue="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase" />
+        <item itemvalue="JUnit.FirstCrudTest.findAll" />
+        <item itemvalue="JUnit.FirstCrudTest.update" />
+        <item itemvalue="JUnit.FirstCrudTest.create" />
+        <item itemvalue="JUnit.FirstCrudTest.delete" />
       </list>
     </recent_temporary>
   </component>
