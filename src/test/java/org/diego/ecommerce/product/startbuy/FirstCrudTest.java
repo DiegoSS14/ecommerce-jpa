@@ -1,6 +1,6 @@
 package org.diego.ecommerce.product.startbuy;
 
-import org.diego.ecommerce.cliente.Client;
+import org.diego.ecommerce.model.Client;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

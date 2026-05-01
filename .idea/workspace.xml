@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/cliente/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/FirstCrudTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +13,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="18" />
+    <option name="cachedIndexableFilesCount" value="20" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -59,6 +56,7 @@
     "JUnit.OperationsWithTransactionsTest.insertFirstProduct.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.insertWithMerge.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.openAndCloseTransaction.executor": "Run",
+    "JUnit.OperationsWithTransactionsTest.preventOperationInDataBase.executor": "Debug",
     "JUnit.OperationsWithTransactionsTest.removeObject.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.updateObject.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -84,11 +82,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.diego.ecommerce.model" />
       <recent name="org.diego.ecommerce.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase">
-    <configuration name="FirstCrudTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.OperationsWithTransactionsTest">
+    <configuration name="ConsultingRecordsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -97,14 +96,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
-      <option name="METHOD_NAME" value="create" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.ConsultingRecordsTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstCrudTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstCrudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -114,8 +112,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
       <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstCrudTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OperationsWithTransactionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -145,9 +142,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
-      <option name="METHOD_NAME" value="update" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OperationsWithTransactionsTest" />
         <item itemvalue="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase" />
+        <item itemvalue="JUnit.FirstCrudTest" />
+        <item itemvalue="JUnit.ConsultingRecordsTest" />
         <item itemvalue="JUnit.FirstCrudTest.findAll" />
-        <item itemvalue="JUnit.FirstCrudTest.update" />
-        <item itemvalue="JUnit.FirstCrudTest.create" />
-        <item itemvalue="JUnit.FirstCrudTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -190,5 +186,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/OperationsWithTransactionsTest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

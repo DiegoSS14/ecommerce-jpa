@@ -1,7 +1,7 @@
 package org.diego.ecommerce.product.startbuy;
 
 import org.diego.ecommerce.product.EntityManagerTest;
-import org.diego.ecommerce.product.Product;
+import org.diego.ecommerce.model.Product;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

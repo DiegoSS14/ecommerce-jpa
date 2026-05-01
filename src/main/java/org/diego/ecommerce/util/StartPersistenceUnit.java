@@ -3,7 +3,7 @@ package org.diego.ecommerce.util;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import org.diego.ecommerce.product.Product;
+import org.diego.ecommerce.model.Product;
 
 public class StartPersistenceUnit {
 
