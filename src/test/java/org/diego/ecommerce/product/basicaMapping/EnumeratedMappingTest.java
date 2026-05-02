@@ -6,6 +6,8 @@ import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class EnumeratedMappingTest extends EntityManagerTest {
     @Test
     public void enumeratedMappingTest(){
@@ -20,6 +22,6 @@ public class EnumeratedMappingTest extends EntityManagerTest {
 
         em.clear();
 
-        Assertions.assertNotNull(em.find(Client.class, 4));
+        assertNotNull(em.find(Client.class, 4));
     }
 }

@@ -17,8 +17,8 @@ import java.math.BigDecimal;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 // Nota fiscal
-@Table(name = "order_item")
-public class OrderItem {
+@Table(name = "ordered_item")
+public class OrderedItem {
     @Id
     @EqualsAndHashCode.Include
     private Integer id;

@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "order")
-public class Order {
+@Table(name = "ordered")
+public class Ordered {
     @Id
     @EqualsAndHashCode.Include
     private Integer id;
@@ -28,4 +28,6 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private StatusOrder status;
     private BigDecimal total;
+    @Embedded
+    private DeliveryAddressOrdered deliveryAddressOrdered;
 }

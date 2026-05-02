@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/EnumeratedMappingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/DeliveryAddressOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/BuiltInObjectMappingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/FirstCrudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/startbuy/FirstCrudTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Ordered.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderedItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/EnumeratedMappingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/EnumeratedMappingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,6 +48,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.StartPersistenceUnit.executor": "Run",
+    "JUnit.BuiltInObjectMappingTest.executor": "Run",
     "JUnit.ConsultingRecordsTest.executor": "Run",
     "JUnit.ConsultingRecordsTest.testFindById.executor": "Run",
     "JUnit.ConsultingRecordsTest.updateReference.executor": "Run",
@@ -90,17 +93,17 @@
       <recent name="org.diego.ecommerce.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EnumeratedMappingTest">
-    <configuration name="ConsultingRecordsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BuiltInObjectMappingTest">
+    <configuration name="BuiltInObjectMappingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="PATTERN" value="org.diego.ecommerce.product.basicaMapping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.ConsultingRecordsTest" />
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.basicaMapping" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.basicaMapping.BuiltInObjectMappingTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BuiltInObjectMappingTest" />
         <item itemvalue="JUnit.EnumeratedMappingTest" />
         <item itemvalue="JUnit.OperationsWithTransactionsTest" />
         <item itemvalue="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase" />
         <item itemvalue="JUnit.FirstCrudTest" />
-        <item itemvalue="JUnit.ConsultingRecordsTest" />
       </list>
     </recent_temporary>
   </component>
