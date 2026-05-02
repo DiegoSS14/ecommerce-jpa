@@ -1,6 +1,7 @@
 package org.diego.ecommerce.product.startbuy;
 
 import org.diego.ecommerce.model.Client;
+import org.diego.ecommerce.model.ClientSex;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ public class FirstCrudTest extends EntityManagerTest {
 
     @Test
     public void create(){
-        Client product = new Client(3, "Fábio Júnior");
+        Client product = new Client(3, "Fábio Júnior", ClientSex.FAMALE);
 
         em.getTransaction().begin();
         em.persist(product);

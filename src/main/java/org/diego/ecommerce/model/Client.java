@@ -1,9 +1,6 @@
 package org.diego.ecommerce.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -20,5 +17,6 @@ public class Client {
     private Integer id;
     private String name;
     @Column(name = "client_sex")
+    @Enumerated(EnumType.STRING)
     private ClientSex clientSex;
 }
