@@ -1,14 +1,12 @@
 package org.diego.ecommerce.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.sound.midi.Sequence;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -20,9 +18,13 @@ import java.time.LocalDate;
 @Table(name = "category")
 public class Category {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @SequenceGenerator(name = "seq", sequenceName = "sequence_primary_key", allocationSize = 50)
     @EqualsAndHashCode.Include
     private Integer id;
+
     private String name;
+
     @Column(name = "parent_category_id")
     private Number parentCategoryId;
 }

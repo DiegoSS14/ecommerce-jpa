@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/DeliveryAddressOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/BuiltInObjectMappingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/PrimaryKeyStrategyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Ordered.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderedItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/EnumeratedMappingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/basicaMapping/EnumeratedMappingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Category.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="30" />
+    <option name="cachedIndexableFilesCount" value="33" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,6 +63,8 @@
     "JUnit.OperationsWithTransactionsTest.preventOperationInDataBase.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.removeObject.executor": "Run",
     "JUnit.OperationsWithTransactionsTest.updateObject.executor": "Run",
+    "JUnit.PrimaryKeyStrategyTest.StrategyAutoTest.executor": "Run",
+    "JUnit.PrimaryKeyStrategyTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -93,7 +92,7 @@
       <recent name="org.diego.ecommerce.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BuiltInObjectMappingTest">
+  <component name="RunManager" selected="JUnit.PrimaryKeyStrategyTest">
     <configuration name="BuiltInObjectMappingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -124,21 +123,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstCrudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.FirstCrudTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OperationsWithTransactionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -154,17 +138,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationsWithTransactionsTest.preventOperationInDataBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PrimaryKeyStrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.product.startbuy.*" />
+          <option name="PATTERN" value="org.diego.ecommerce.product.basicaMapping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.startbuy" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.startbuy.OperationsWithTransactionsTest" />
-      <option name="METHOD_NAME" value="preventOperationInDataBase" />
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.basicaMapping" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.basicaMapping.PrimaryKeyStrategyTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrimaryKeyStrategyTest.StrategyAutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.basicaMapping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.basicaMapping" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.basicaMapping.PrimaryKeyStrategyTest" />
+      <option name="METHOD_NAME" value="StrategyAutoTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PrimaryKeyStrategyTest" />
+        <item itemvalue="JUnit.PrimaryKeyStrategyTest.StrategyAutoTest" />
         <item itemvalue="JUnit.BuiltInObjectMappingTest" />
         <item itemvalue="JUnit.EnumeratedMappingTest" />
         <item itemvalue="JUnit.OperationsWithTransactionsTest" />
-        <item itemvalue="JUnit.OperationsWithTransactionsTest.preventOperationInDataBase" />
-        <item itemvalue="JUnit.FirstCrudTest" />
       </list>
     </recent_temporary>
   </component>
