@@ -30,7 +30,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
     public void insertWithMerge() {
         Product product = new Product();
 
-        product.setId(4);
+//        product.setId(4);
         product.setName("Mesa digitalizadora Wacom");
         product.setPrice(BigDecimal.valueOf(260));
         product.setDescription("Mesa digitalizadora profissional");
@@ -47,7 +47,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
     @Test
     public void updateManagedObject() {
         Product product = em.find(Product.class, 1);
-        product.setId(1);
+//        product.setId(1);
 
         // Nesse caso eu posso apenas realizar as modificações no objeto que ao fim da transação ele irá persistir porque esse objeto é gerenciado pelo EM
         em.getTransaction().begin();
@@ -75,10 +75,12 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
 
         em.clear();
 
-        Product productFinded = em.find(Product.class, 1);
+        Product productFinded = em.createQuery("SELECT p FROM Product p Where p.name = :name", Product.class)
+                .setParameter("name", "Livro Programador Pragmático")
+                .getSingleResult();
 
         assertNotNull(productFinded);
-        assertEquals(productFinded.getName(), product.getName());
+        assertEquals(1, productFinded.getId());
     }
 
     @Test
@@ -96,7 +98,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
     @Test
     public void insertFirstProduct() {
         Product product = new Product();
-        product.setId(2);
+//        product.setId(2);
         product.setName("Notebook Acer");
         product.setDescription("Notebook com 32gb de ram, RTX 4050, ssd de 512gb.");
         product.setPrice(BigDecimal.valueOf(6700));
@@ -115,7 +117,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
     }
 
     @Test
-    public void openAndCloseTransaction(){
+    public void openAndCloseTransaction() {
         Product product = em.find(Product.class, 1);
 
         // É necessário abrir e fechar uma transação para realizar modificações no banco, sem isso não funciona

@@ -6,6 +6,7 @@ import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -13,30 +14,46 @@ public class FirstCrudTest extends EntityManagerTest {
 
     @Test
     public void create(){
-        Client product = new Client(3, "Fábio Júnior", ClientSex.FAMALE);
+        Client client = new Client();
+        client.setName("Fábio Júnior");
+        client.setClientSex(ClientSex.MALE);
 
         em.getTransaction().begin();
-        em.persist(product);
+        em.persist(client);
         em.flush();
         em.getTransaction().commit();
 
-        assertEquals(product.getName(), em.find(Client.class,3).getName());
+        assertEquals(client.getName(), em.find(Client.class,3).getName());
     }
 
     @Test
     public void findById() {
-        Assertions.assertNotNull(em.find(Client.class,1));
+        assertNotNull(em.find(Client.class,1));
     }
 
-    @Test
-    public void findAll() {
-        var clients =  em.createNativeQuery(
-                "select * from Client",
-                Client.class).getResultList();
+//    @Test
+//    public void findAll() {
+    // Desse jeito não funciona, o Java não consegue associar o objeto da tabela ao objeto java por diferença nos nomes de propriedades
+//        var clients =  em.createNativeQuery("""
+//                        SELECT
+//                        id,
+//                        name,
+//                        client_sex
+//                        FROM Client
+//                        """,
+////                        "select c from c",
+//                Client.class).getResultList();
+//
+//        assertNotNull(clients);
+//    }
 
-        Assertions.assertNotNull(clients);
-        System.out.println(clients);
-    }
+@Test
+public void findAll() {
+    // Desse jeito funciona porque ao invés de usar native query, usa-se JPQL que interpreta o dado e converte para objeto.
+    var clients = em.createQuery("SELECT c FROM Client c", Client.class)
+            .getResultList();
+    assertNotNull(clients);
+}
 
     @Test
     public void update() {

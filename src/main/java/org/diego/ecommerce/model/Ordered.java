@@ -17,6 +17,7 @@ import java.time.LocalDate;
 @Table(name = "ordered")
 public class Ordered {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
     @Column(name = "order_date")

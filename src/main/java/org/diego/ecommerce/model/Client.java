@@ -13,6 +13,7 @@ import lombok.*;
 @Table(name = "client")
 public class Client {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
     private String name;

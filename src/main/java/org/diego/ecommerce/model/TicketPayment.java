@@ -14,6 +14,7 @@ import lombok.ToString;
 @Table(name = "ticket_payment")
 public class TicketPayment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
     @Column(name = "order_id")

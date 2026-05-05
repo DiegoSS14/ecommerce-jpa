@@ -23,11 +23,11 @@ public class BuiltInObjectMappingTest extends EntityManagerTest {
         deliveryAddressOrdered.setDistrict("000000000-00");
 
         Ordered order = new Ordered();
-        order.setId(1);
+//        order.setId(1);
         order.setOrderDate(LocalDate.now());
         order.setCompletionDate(LocalDate.of(2026, 5, 20));
         order.setTotal(BigDecimal.valueOf(500));
-        order.setInvoiceId(2);
+//        order.setInvoiceId(2);
         order.setStatus(StatusOrder.WAITING);
         order.setDeliveryAddressOrdered(deliveryAddressOrdered);
 

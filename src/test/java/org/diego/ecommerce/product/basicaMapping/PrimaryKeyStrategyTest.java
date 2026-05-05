@@ -10,7 +10,7 @@ public class PrimaryKeyStrategyTest extends EntityManagerTest {
     @Test
     public void TestStrategyKey() {
         Category category = new Category();
-        category.setParentCategoryId(1);
+//        category.setParentCategoryId(1);
         category.setName("Category test");
 
         em.getTransaction().begin();

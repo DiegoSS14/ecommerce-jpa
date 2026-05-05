@@ -14,6 +14,7 @@ import lombok.ToString;
 @Table(name = "card_payment")
 public class CardPayment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
 
