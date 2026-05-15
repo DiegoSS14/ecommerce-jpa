@@ -20,11 +20,16 @@ public class OrderedItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-    @Column(name = "order_id")
-    private Integer orderId;
-    @Column(name = "product_id")
-    private Integer productId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ordered_id")
+    private Ordered ordered;
+
+    @OneToOne
+    private Product product;
+
     @Column(name = "product_price")
     private BigDecimal productPrice;
+
     private Integer quantity;
 }

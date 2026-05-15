@@ -23,12 +23,12 @@ public class FirstCrudTest extends EntityManagerTest {
         em.flush();
         em.getTransaction().commit();
 
-        assertEquals(client.getName(), em.find(Client.class,3).getName());
+        assertEquals(client.getName(), em.find(Client.class,4).getName());
     }
 
     @Test
     public void findById() {
-        assertNotNull(em.find(Client.class,1));
+        assertNotNull(em.find(Client.class,3));
     }
 
 //    @Test
@@ -59,7 +59,7 @@ public void findAll() {
     public void update() {
         String name = "Manuel Jaca da Selva";
 
-        Client client = em.find(Client.class, 1);
+        Client client = em.find(Client.class, 3);
 
         em.getTransaction().begin();
         client.setName(name);
@@ -67,7 +67,7 @@ public void findAll() {
 
         em.clear();
 
-        assertEquals(name, em.find(Client.class, 1).getName());
+        assertEquals(name, em.find(Client.class, 3).getName());
     }
 
     @Test

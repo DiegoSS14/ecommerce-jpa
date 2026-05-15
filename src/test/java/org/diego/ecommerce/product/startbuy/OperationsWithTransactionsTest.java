@@ -1,7 +1,7 @@
 package org.diego.ecommerce.product.startbuy;
 
-import org.diego.ecommerce.product.EntityManagerTest;
 import org.diego.ecommerce.model.Product;
+import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
 
     @Test
     public void preventOperationInDataBase() {
-        Product product = em.find(Product.class, 1);
+        Product product = em.find(Product.class, 2);
         em.detach(product); // Impede que os dados abaixo sejam persistidos no banco
 
         em.getTransaction().begin();
@@ -22,8 +22,11 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
 
         em.clear();
 
-        Product productFinded = em.find(Product.class, 1);
-        assertEquals(productFinded.getName(), "Kindle");
+        Product productFound = em.createQuery("SELECT p FROM Product p Where p.name = :name", Product.class)
+                .setParameter("name", "Kindle 2")
+                .getSingleResult();
+
+        assertEquals("Kindle 2", productFound.getName());
     }
 
     @Test
@@ -41,7 +44,10 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
 
         em.clear();
 
-        assertEquals(em.find(Product.class, 4).getName(), product.getName());
+        Product foundProduct = em.createQuery("SELECT p FROM Product p WHERE p.name = :productName", Product.class)
+                .setParameter("productName", "Mesa digitalizadora Wacom").getSingleResult();
+
+        assertEquals(product.getName(), foundProduct.getName());
     }
 
     @Test

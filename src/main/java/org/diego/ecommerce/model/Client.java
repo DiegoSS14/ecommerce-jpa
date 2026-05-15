@@ -3,6 +3,8 @@ package org.diego.ecommerce.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,4 +22,7 @@ public class Client {
     @Column(name = "client_sex")
     @Enumerated(EnumType.STRING)
     private ClientSex clientSex;
+
+    @OneToMany(mappedBy = "client")
+    private List<Ordered> ordereds;
 }

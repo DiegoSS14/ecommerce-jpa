@@ -20,9 +20,13 @@ public class Invoice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-    @Column(name = "order_id")
-    private Integer orderId;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Ordered orderId;
+
     private String xml;
+
     @Column(name = "issue_date")
     private Date issueDate; // Data de emissão
 }

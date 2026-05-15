@@ -5,6 +5,7 @@ import org.diego.ecommerce.model.ClientSex;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class EnumeratedMappingTest extends EntityManagerTest {
@@ -21,6 +22,9 @@ public class EnumeratedMappingTest extends EntityManagerTest {
 
         em.clear();
 
-        assertNotNull(em.find(Client.class, 4));
+        Client foundClient = em.createQuery("SELECT c FROM Client c WHERE c.name = :clientName", Client.class)
+                .setParameter("clientName", "José Ferreira Bruto").getSingleResult();
+
+        assertEquals(foundClient.getName(), client.getName());
     }
 }
