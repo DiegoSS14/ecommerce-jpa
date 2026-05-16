@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @ToString
 @Getter
@@ -30,6 +32,10 @@ public class Category {
 
     private String name;
 
-    @Column(name = "parent_category_id")
-    private Number parentCategoryId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "parent_category_id")
+    private Category parentCategory;
+
+    @OneToMany(mappedBy = "parentCategory")
+    private List<Category> categories;
 }
