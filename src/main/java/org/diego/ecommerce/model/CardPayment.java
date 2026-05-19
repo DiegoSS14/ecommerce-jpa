@@ -18,9 +18,12 @@ public class CardPayment {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @Column(name = "order_id")
-    private Integer orderId;
+    @OneToOne
+    @JoinColumn(name = "ordered_id")
+    private Ordered ordered;
+
     @Enumerated(EnumType.STRING)
     private PaymentStatus status;
+
     private String number;
 }

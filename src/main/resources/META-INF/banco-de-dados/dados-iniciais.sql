@@ -6,3 +6,5 @@ insert into client (id, name) values (1, 'Anderson Silva');
 insert into client (id, name) values (2, 'Maurício Oliveira');
 insert into client (id, name) values (3, 'Thiago Sousa');
 insert into client (id, name) values (20, 'Diego Sousa');
+
+insert into category (id, name) values (1, 'Eletronicos');

@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.xml.namespace.QName;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @ToString
@@ -23,4 +25,11 @@ public class Product {
     String name;
     String description;
     BigDecimal price;
+
+    @ManyToMany
+    @JoinTable(
+            name = "product_category",
+            joinColumns = @JoinColumn(name = "product_id"), // Owner
+            inverseJoinColumns = @JoinColumn(name = "category_id")) // Secondary
+    List<Category> categorys;
 }

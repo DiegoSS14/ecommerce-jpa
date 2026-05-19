@@ -21,7 +21,7 @@ public class OrderedItem {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //(fetch = FetchType.LAZY)
     @JoinColumn(name = "ordered_id")
     private Ordered ordered;
 

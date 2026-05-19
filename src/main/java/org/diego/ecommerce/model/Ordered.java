@@ -46,4 +46,7 @@ public class Ordered {
 
     @OneToMany(mappedBy = "ordered")
     private List<OrderedItem> orderedItem;
+
+    @OneToOne(mappedBy = "ordered")
+    CardPayment payment;
 }
