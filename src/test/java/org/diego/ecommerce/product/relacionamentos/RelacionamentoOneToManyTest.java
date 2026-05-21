@@ -35,7 +35,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
         ordered.setTotal(BigDecimal.valueOf(224));
         ordered.setDeliveryAddressOrdered(deliveryAddressOrdered);
 
-        invoice.setOrderId(ordered);
+        invoice.setOrdered(ordered);
 
         em.getTransaction().begin();
         em.persist(invoice);

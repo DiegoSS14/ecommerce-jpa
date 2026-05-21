@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d6d812-7a9d-46f6-8dda-325e923899e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoManyToManyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoOneToOneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RemovendoEntidadesReferenciadas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/CardPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/CardPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Ordered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Ordered.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/OrderedItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diego/ecommerce/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoManyToOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoManyToOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoOneToManyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoOneToManyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoOneToOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diego/ecommerce/product/relacionamentos/RelacionamentoOneToOneTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="39" />
+    <option name="cachedIndexableFilesCount" value="41" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -80,8 +76,10 @@
     "JUnit.RelacionamentoManyToOneTest.executor": "Run",
     "JUnit.RelacionamentoManyToOneTest.verificaRelacionamento.executor": "Run",
     "JUnit.RelacionamentoManyToOneTest.verificaRelacionamento2.executor": "Run",
+    "JUnit.RelacionamentoOneToManyTest.executor": "Run",
     "JUnit.RelacionamentoOneToManyTest.verificaRelacionamento.executor": "Run",
     "JUnit.RelacionamentoOneToOneTest.executor": "Run",
+    "JUnit.RelacionamentoOneToOneTest.verificaRelacionamento2.executor": "Run",
     "JUnit.RemovendoEntidadesReferenciadas.executor": "Run",
     "JUnit.RemovendoEntidadesReferenciadas.removeEntidadesReferenciadas.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -112,7 +110,7 @@
       <recent name="org.diego.ecommerce.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RelacionamentoOneToOneTest">
+  <component name="RunManager" selected="JUnit.RelacionamentoOneToOneTest.verificaRelacionamento2">
     <configuration name="RelacionamentoManyToManyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -128,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RelacionamentoManyToManyTest.verificaRelacionamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RelacionamentoManyToOneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -137,9 +135,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.relacionamentos" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RelacionamentoManyToManyTest" />
-      <option name="METHOD_NAME" value="verificaRelacionamento" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RelacionamentoManyToOneTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RelacionamentoOneToManyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diego.ecommerce.product.relacionamentos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.relacionamentos" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RelacionamentoOneToManyTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,7 +171,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemovendoEntidadesReferenciadas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RelacionamentoOneToOneTest.verificaRelacionamento2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -168,23 +180,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.relacionamentos" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RemovendoEntidadesReferenciadas" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RemovendoEntidadesReferenciadas.removeEntidadesReferenciadas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.diego.ecommerce.product.relacionamentos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.diego.ecommerce.product.relacionamentos" />
-      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RemovendoEntidadesReferenciadas" />
-      <option name="METHOD_NAME" value="removeEntidadesReferenciadas" />
+      <option name="MAIN_CLASS_NAME" value="org.diego.ecommerce.product.relacionamentos.RelacionamentoOneToOneTest" />
+      <option name="METHOD_NAME" value="verificaRelacionamento2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RelacionamentoOneToOneTest.verificaRelacionamento2" />
         <item itemvalue="JUnit.RelacionamentoOneToOneTest" />
+        <item itemvalue="JUnit.RelacionamentoManyToOneTest" />
+        <item itemvalue="JUnit.RelacionamentoOneToManyTest" />
         <item itemvalue="JUnit.RelacionamentoManyToManyTest" />
-        <item itemvalue="JUnit.RelacionamentoManyToManyTest.verificaRelacionamento" />
-        <item itemvalue="JUnit.RemovendoEntidadesReferenciadas" />
-        <item itemvalue="JUnit.RemovendoEntidadesReferenciadas.removeEntidadesReferenciadas" />
       </list>
     </recent_temporary>
   </component>

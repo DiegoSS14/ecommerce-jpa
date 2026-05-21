@@ -21,9 +21,8 @@ public class Invoice {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
-    private Ordered orderId;
+    @OneToOne(mappedBy = "invoice")
+    private Ordered ordered;
 
     private String xml;
 

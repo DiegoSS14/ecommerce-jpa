@@ -36,7 +36,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
         ordered.setTotal(BigDecimal.valueOf(224));
         ordered.setDeliveryAddressOrdered(deliveryAddressOrdered);
 
-        invoice.setOrderId(ordered);
+        invoice.setOrdered(ordered);
 
         em.getTransaction().begin();
         em.persist(invoice);
@@ -80,7 +80,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
         orderedItem.setProductPrice(BigDecimal.valueOf(110));
         orderedItem.setOrdered(ordered);
 
-        invoice.setOrderId(ordered);
+        invoice.setOrdered(ordered);
         ordered.setOrderedItem(List.of(orderedItem));
 
         em.getTransaction().begin();
