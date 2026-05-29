@@ -21,7 +21,7 @@ public class Invoice {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @OneToOne(mappedBy = "invoice")
+    @OneToOne(mappedBy = "invoice", optional = false)
     private Ordered ordered;
 
     private String xml;

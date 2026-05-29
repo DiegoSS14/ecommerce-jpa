@@ -1,12 +1,11 @@
 package org.diego.ecommerce.product.basicaMapping;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.diego.ecommerce.model.Client;
 import org.diego.ecommerce.model.ClientSex;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class EnumeratedMappingTest extends EntityManagerTest {
     @Test

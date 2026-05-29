@@ -33,7 +33,7 @@ public class Ordered {
 //            joinColumns = @JoinColumn(name = "ordered_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
     private Invoice invoice; // Nota Fiscal id
 
-    @ManyToOne // Muitos pedidos para um cliente
+    @ManyToOne(optional = false) // Muitos pedidos para um cliente
     @JoinColumn(name = "client_id")
     private Client client;
 

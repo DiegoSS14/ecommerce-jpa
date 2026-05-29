@@ -1,12 +1,14 @@
 package org.diego.ecommerce.product.startbuy;
 
-import org.diego.ecommerce.model.Product;
-import org.diego.ecommerce.product.EntityManagerTest;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.diego.ecommerce.model.Product;
+import org.diego.ecommerce.product.EntityManagerTest;
+import org.junit.jupiter.api.Test;
 
 public class OperationsWithTransactionsTest extends EntityManagerTest {
 
@@ -130,10 +132,10 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
         em.getTransaction().begin();
 
         // O update é feito mesmo sem chamar o persist se manipular o objeto dentro da transação
-        // product.setName("Monkey");
-        // em.persist(product);
-        // em.merge();
-        // em.remove();
+        product.setName("Monkey");
+        em.persist(product);
+        em.merge(product);
+        em.remove(product);
 
         em.getTransaction().commit();
         System.out.println(em.find(Product.class, 1));

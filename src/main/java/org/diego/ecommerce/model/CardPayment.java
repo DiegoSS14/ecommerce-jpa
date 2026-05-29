@@ -18,7 +18,7 @@ public class CardPayment {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @OneToOne
+    @OneToOne(optional = false)
     @JoinColumn(name = "ordered_id")
     private Ordered ordered;
 
