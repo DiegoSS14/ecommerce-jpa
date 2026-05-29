@@ -1,14 +1,15 @@
 package org.diego.ecommerce.product.startbuy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import java.util.Optional;
+
 import org.diego.ecommerce.model.Client;
 import org.diego.ecommerce.model.ClientSex;
 import org.diego.ecommerce.product.EntityManagerTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class FirstCrudTest extends EntityManagerTest {
 
@@ -23,7 +24,14 @@ public class FirstCrudTest extends EntityManagerTest {
         em.flush();
         em.getTransaction().commit();
 
-        assertEquals(client.getName(), em.find(Client.class,4).getName());
+        em.clear();
+
+        Client clientFind = em.createQuery(
+            "SELECT c FROM Client c WHERE c.name = :name", Client.class)
+            .setParameter("name", client.getName())
+            .getSingleResult();
+
+        assertEquals(client.getName(), clientFind.getName());
     }
 
     @Test
