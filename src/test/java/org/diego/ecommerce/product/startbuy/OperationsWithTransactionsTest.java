@@ -54,26 +54,26 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
 
     @Test
     public void updateManagedObject() {
-        Product product = em.find(Product.class, 1);
+        Product product = em.find(Product.class, 2);
 //        product.setId(1);
 
         // Nesse caso eu posso apenas realizar as modificações no objeto que ao fim da transação ele irá persistir porque esse objeto é gerenciado pelo EM
         em.getTransaction().begin();
         product.setName("Livro Domain Driven Design");
         product.setDescription("O melhor livro para você dar um upgrade na sua carreira");
+        em.flush();
         em.getTransaction().commit();
 
         em.clear();
 
-        Product productFinded = em.find(Product.class, 1);
+        Product productFinded = em.find(Product.class, 2);
         assertEquals(productFinded.getName(), product.getName());
     }
 
     @Test
     public void updateObject() {
         Product product = new Product();
-        product.setId(1);
-        product.setName("Livro Programador Pragmático");
+        product.setName("Livro Clean Code");
         product.setDescription("O melhor livro para você dar um upgrade na sua carreira");
         product.setPrice(BigDecimal.TEN);
 
@@ -84,11 +84,11 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
         em.clear();
 
         Product productFinded = em.createQuery("SELECT p FROM Product p Where p.name = :name", Product.class)
-                .setParameter("name", "Livro Programador Pragmático")
+                .setParameter("name", "Livro Clean Code")
                 .getSingleResult();
 
         assertNotNull(productFinded);
-        assertEquals(1, productFinded.getId());
+        assertEquals(4, productFinded.getId());
     }
 
     @Test
