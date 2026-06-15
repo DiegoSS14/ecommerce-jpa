@@ -28,7 +28,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
 
         Ordered ordered = new Ordered();
         ordered.setOrderDate(LocalDate.now());
-        ordered.setCompletionDate(LocalDate.now());
+        ordered.setCreationDate(LocalDate.now());
         ordered.setInvoice(invoice);
         ordered.setClient(client);
         ordered.setStatus(StatusOrder.PAID);

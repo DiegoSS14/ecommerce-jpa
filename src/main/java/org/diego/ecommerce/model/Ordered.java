@@ -3,16 +3,19 @@ package org.diego.ecommerce.model;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
 @Table(name = "ordered")
 public class Ordered {
     @Id
@@ -23,8 +26,11 @@ public class Ordered {
     @Column(name = "order_date")
     private LocalDate orderDate;
 
-    @Column(name = "completion_date")
-    private LocalDate completionDate;
+    @Column(name = "creation_date")
+    private LocalDate creationDate;
+
+    @Column(name = "last_update_date")
+    private LocalDate lastUpdateDate;
 
     @OneToOne
     @JoinColumn(name = "invoice_id")
@@ -33,7 +39,7 @@ public class Ordered {
 //            joinColumns = @JoinColumn(name = "ordered_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
     private Invoice invoice; // Nota Fiscal id
 
-    @ManyToOne(optional = false) // Muitos pedidos para um cliente
+    @ManyToOne(optional = false, cascade = CascadeType.ALL) // Muitos pedidos para um cliente
     @JoinColumn(name = "client_id")
     private Client client;
 
@@ -45,9 +51,31 @@ public class Ordered {
     @Embedded
     private DeliveryAddressOrdered deliveryAddressOrdered;
 
-    @OneToMany(mappedBy = "ordered")
-    private List<OrderedItem> orderedItem;
+    @OneToMany(mappedBy = "ordered", cascade = CascadeType.ALL)
+    private List<OrderedItem> orderedItems;
 
-    @OneToOne(mappedBy = "ordered")
+    @OneToOne(mappedBy = "ordered", cascade = CascadeType.PERSIST)
     CardPayment payment;
+
+    @PrePersist
+    void prePersist() {
+        this.creationDate = LocalDate.now();
+        this.orderDate = LocalDate.now();
+        calculateTotal();
+    }
+
+    @PostUpdate
+    void onUpdate() {
+        this.lastUpdateDate = LocalDate.now();
+        calculateTotal();
+    }
+
+    void calculateTotal() {
+        if (orderedItems != null) {
+        this.total = this.orderedItems.stream()
+                .map(OrderedItem::getProductPrice)
+                .filter(Objects::nonNull)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        } else this.total =  BigDecimal.ZERO;
+    }
 }

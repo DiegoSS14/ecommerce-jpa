@@ -29,7 +29,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
 
         Ordered ordered = new Ordered();
         ordered.setOrderDate(LocalDate.now());
-        ordered.setCompletionDate(LocalDate.now());
+        ordered.setCreationDate(LocalDate.now());
         ordered.setInvoice(invoice);
         ordered.setClient(client);
         ordered.setStatus(StatusOrder.PAID);
@@ -68,7 +68,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
 
         Ordered ordered = new Ordered();
         ordered.setOrderDate(LocalDate.now());
-        ordered.setCompletionDate(LocalDate.now());
+        ordered.setCreationDate(LocalDate.now());
         ordered.setInvoice(invoice);
         ordered.setClient(client);
         ordered.setStatus(StatusOrder.PAID);
@@ -81,7 +81,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
         orderedItem.setOrdered(ordered);
 
         invoice.setOrdered(ordered);
-        ordered.setOrderedItem(List.of(orderedItem));
+        ordered.setOrderedItems(List.of(orderedItem));
 
         em.getTransaction().begin();
         em.persist(invoice);
@@ -95,7 +95,7 @@ public class RelacionamentoManyToOneTest extends EntityManagerTest {
         boolean toHaveAnyThing = em.find(Client.class, client.getId())
                 .getOrdereds()
                 .stream()
-                .flatMap(o -> o.getOrderedItem().stream())
+                .flatMap(o -> o.getOrderedItems().stream())
                 .anyMatch(item -> item.getId().equals(orderedItem.getId()));
 
         assertTrue(toHaveAnyThing);

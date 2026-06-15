@@ -88,7 +88,7 @@ public class OperationsWithTransactionsTest extends EntityManagerTest {
                 .getSingleResult();
 
         assertNotNull(productFinded);
-        assertEquals(4, productFinded.getId());
+        assertEquals(5, productFinded.getId());
     }
 
     @Test

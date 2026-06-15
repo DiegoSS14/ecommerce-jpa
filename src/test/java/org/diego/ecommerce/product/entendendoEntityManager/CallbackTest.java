@@ -1,14 +1,12 @@
-package org.diego.ecommerce.product.relacionamentos;
+package org.diego.ecommerce.product.entendendoEntityManager;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.diego.ecommerce.model.CardPayment;
 import org.diego.ecommerce.model.Client;
-import org.diego.ecommerce.model.Invoice;
 import org.diego.ecommerce.model.Ordered;
 import org.diego.ecommerce.model.OrderedItem;
 import org.diego.ecommerce.model.PaymentStatus;
@@ -16,11 +14,12 @@ import org.diego.ecommerce.model.StatusOrder;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Test;
 
-public class RelacionamentoOneToOneTest extends EntityManagerTest {
+public class CallbackTest extends EntityManagerTest {
     @Test
-    public void verificaRelacionamento() {
+    void testeDeCallbacks() {
         CardPayment cardPayment = new CardPayment();
-        List<OrderedItem> orderedItems = Arrays.asList(new OrderedItem());
+        List<OrderedItem> orderedItems = new ArrayList<>();
+        orderedItems.add(new OrderedItem());
         Ordered ordered = new Ordered();
         ordered.setClient(em.find(Client.class, 1));
         ordered.setStatus(StatusOrder.WAITING);
@@ -33,32 +32,21 @@ public class RelacionamentoOneToOneTest extends EntityManagerTest {
 
         em.getTransaction().begin();
         em.persist(ordered);
+        em.flush();
+        ordered.setStatus(StatusOrder.PAID);
         em.getTransaction().commit();
 
-        em.clear();
-
-        assertNotNull(em.find(CardPayment.class, cardPayment.getId()));
-    }
-
-    @Test
-    public void verificaRelacionamento2() {
-
-        Invoice invoice = new Invoice();
-        invoice.setXml("XML");
-        invoice.setIssueDate(new Date());
-
-        Ordered ordered = new Ordered();
-        ordered.setClient(em.find(Client.class, 1));
-        ordered.setStatus(StatusOrder.WAITING);
-        ordered.setInvoice(invoice);
-
+        // Para disparar o @PostUpdate é necessário que a alteração seja feita em outra transação.
         em.getTransaction().begin();
-        em.persist(invoice);
-        em.persist(ordered);
+        em.merge(ordered);
         em.getTransaction().commit();
 
         em.clear();
 
-        assertNotNull(em.find(Ordered.class, ordered.getId()).getInvoice());
+        Ordered findOrder = em.find(Ordered.class, ordered.getId());
+
+        assertNotNull(findOrder.getCreationDate());
+        assertNotNull(findOrder.getOrderDate());
+        assertNotNull(findOrder.getLastUpdateDate());
     }
 }
