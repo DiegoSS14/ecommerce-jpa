@@ -14,7 +14,41 @@ import org.diego.ecommerce.model.StatusOrder;
 import org.diego.ecommerce.product.EntityManagerTest;
 import org.junit.jupiter.api.Test;
 
-public class CallbackTest extends EntityManagerTest {
+public class CallbacksTest extends EntityManagerTest {
+    @Test
+    void testeDelisteners() {
+        // 1. Inicia a transação (necessária para operações de escrita)
+        em.getTransaction().begin();
+
+        // 2. Cria e persiste o Cliente (necessário por causa da FK em Ordered)
+        Client client = new Client();
+        client.setName("Diego Sousa");
+        em.persist(client);
+
+        // 3. Cria a entidade Ordered que acionará o InvoiceListener
+        Ordered ordered = new Ordered();
+        ordered.setClient(client);
+        ordered.setStatus(StatusOrder.PAID); // Garante que tem status para o fluxo
+
+        // 4. Salva no banco de dados (Isso vai disparar o @PrePersist e o
+        // InvoiceListener)
+        em.persist(ordered);
+
+        // 5. Sincroniza e limpa o cache do EntityManager
+        em.flush();
+        em.clear();
+
+        // 6. Agora sim, busca do banco o pedido que ACABAMOS de criar
+        Ordered orderedVerificacao = em.find(Ordered.class, ordered.getId());
+
+        // 7. Validações
+        assertNotNull(orderedVerificacao);
+        assertNotNull(orderedVerificacao.getInvoice()); // Valida se o InvoiceListener funcionou!
+        assertNotNull(orderedVerificacao.getCreationDate()); // Valida se o @PrePersist funcionou!
+
+        em.getTransaction().commit();
+    }
+
     @Test
     void testeDeCallbacks() {
         CardPayment cardPayment = new CardPayment();
@@ -36,7 +70,8 @@ public class CallbackTest extends EntityManagerTest {
         ordered.setStatus(StatusOrder.PAID);
         em.getTransaction().commit();
 
-        // Para disparar o @PostUpdate é necessário que a alteração seja feita em outra transação.
+        // Para disparar o @PostUpdate é necessário que a alteração seja feita em outra
+        // transação.
         em.getTransaction().begin();
         em.merge(ordered);
         em.getTransaction().commit();

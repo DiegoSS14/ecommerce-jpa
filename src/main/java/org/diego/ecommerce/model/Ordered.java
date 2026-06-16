@@ -11,10 +11,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
+import org.diego.ecommerce.listener.InvoiceListener;
+
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EntityListeners(value = InvoiceListener.class)
 @NoArgsConstructor
 @Table(name = "ordered")
 public class Ordered {
@@ -32,7 +35,7 @@ public class Ordered {
     @Column(name = "last_update_date")
     private LocalDate lastUpdateDate;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "invoice_id")
     // É possível utilizar @JoinTable aqui também, mesmo não sendo uma relação Many to Many
 //    @JoinTable(name = "ordered_invoice",
@@ -78,4 +81,9 @@ public class Ordered {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         } else this.total =  BigDecimal.ZERO;
     }
+
+    public boolean wasPaid() {
+        return this.status.equals(StatusOrder.PAID);
+    }
+
 }
