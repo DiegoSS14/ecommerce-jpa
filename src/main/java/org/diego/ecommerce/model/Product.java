@@ -3,7 +3,10 @@ package org.diego.ecommerce.model;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.diego.ecommerce.service.GenericListener;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,6 +24,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EntityListeners(value = GenericListener.class)
 @Table(name = "product")
 public class Product {
 

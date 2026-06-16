@@ -12,12 +12,13 @@ import java.util.List;
 import java.util.Objects;
 
 import org.diego.ecommerce.listener.InvoiceListener;
+import org.diego.ecommerce.service.GenericListener;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@EntityListeners(value = InvoiceListener.class)
+@EntityListeners(value = {InvoiceListener.class, GenericListener.class})
 @NoArgsConstructor
 @Table(name = "ordered")
 public class Ordered {
