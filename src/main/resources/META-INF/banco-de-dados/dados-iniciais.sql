@@ -1,6 +1,6 @@
-insert into product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
-insert into product (id, name, price, description) values (2, 'Kindle 2', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
-insert into product (id, name, price, description) values (3, 'Notebook', 5689.0, 'Conheça o novo notebook gamer com RTX 5090 e 64gb de ram DDR5.');
+insert into product (id, name, price, creation_date, description) values (1, 'Kindle', 499.0, date_sub(sysdate(), interval 1 day) 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
+insert into product (id, name, price, creation_date, description) values (2, 'Kindle 2', 499.0, date_sub(sysdate(), interval 1 day) 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
+insert into product (id, name, price, creation_date, description) values (3, 'Notebook', 5689.0, date_sub(sysdate(), interval 1 day) 'Conheça o novo notebook gamer com RTX 5090 e 64gb de ram DDR5.');
 
 insert into client (id, name) values (1, 'Anderson Silva');
 insert into client (id, name) values (2, 'Maurício Oliveira');

@@ -30,10 +30,10 @@ public class Ordered {
     @Column(name = "order_date")
     private LocalDate orderDate;
 
-    @Column(name = "creation_date")
+    @Column(name = "creation_date", updatable = false)
     private LocalDate creationDate;
 
-    @Column(name = "last_update_date")
+    @Column(name = "last_update_date", insertable = false)
     private LocalDate lastUpdateDate;
 
     @OneToOne(cascade = CascadeType.ALL)
